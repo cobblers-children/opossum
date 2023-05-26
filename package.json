@@ -16,8 +16,9 @@
     "test": "nyc tape test/*.js | faucet",
     "test:headless": "node test/browser/webpack-test.js",
     "test:browser": "opener http://localhost:9007/test/browser/index.html && serve . -p 9007",
-    "test:all": "npm run build && npm run test && npm run test:headless",
+    "test:all": "npm run build && npm run test && npm run test:headless && npm run benchmark",
     "lint": "eslint --ignore-path .gitignore .",
+    "benchmark": "./bench.js",
     "clean": "rm -rf node_modules dist/*.js test/browser/webpack-test.js",
     "prepublishOnly": "npm run build"
   },
@@ -39,6 +40,7 @@
     "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
     "babel-loader": "^9.1.2",
+    "benchmark": "^2.1.4",
     "buffer": "^6.0.3",
     "documentation": "^14.0.1",
     "eslint": "^8.39.0",
